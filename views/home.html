@@ -1,0 +1,18 @@
+<ion-view class="slider-view">
+    <ion-content scroll="false" class="padding">
+        <button class="button button-full button-positive">
+            Truck
+        </button>
+        <button class="button button-full button-assertive">
+            Search Job
+        </button>
+        <ion-slide-box show-pager="true">
+            <ion-slide ng-repeat="i in [1,2,3,4,5]">
+                <div class="list card">
+                    <div class="item item-image"> <img ng-src="http://lorempixel.com/300/200/nature?v={{i}}"> </div>
+                   
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

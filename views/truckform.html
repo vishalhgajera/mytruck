@@ -1,0 +1,79 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Add Truck</h1>
+        <buttons side="right">
+            <a class="button button-icon button-clear ion-android-close" ng-click="closeModal()"> </a>
+        </buttons>
+
+    </ion-header-bar>
+    <ion-content class="truckform">
+        <form name="truckForm" ng-submit="addTruck(truckForm)" novalidate>
+
+            <div class="list">
+
+                <label class="item item-input" ng-class="{ 'has-errors' : truckForm.regno.$invalid && (truckForm.regno.$dirty || truckForm.$submitted), 'no-errors' : truckForm.regno.$valid}">
+                    <span class="input-label">Reg No.*</span>
+                    <input type="text" name="regno" ng-model="truckfeild.regno" required>
+                </label>
+                <label class="item item-input" ng-class="{ 'has-errors' : truckForm.owner.$invalid && (truckForm.owner.$dirty || truckForm.$submitted), 'no-errors' : truckForm.owner.$valid}">
+                    <span class="input-label">Owner*</span>
+                    <input type="text" name="owner" ng-model="truckfeild.owner" required>
+                </label>
+                <label class="item item-input" ng-class="{ 'has-errors' : truckForm.value.$invalid && (truckForm.value.$dirty || truckForm.$submitted), 'no-errors' : truckForm.value.$valid}">
+                    <span class="input-label">Value*</span>
+                    <input type="text" name="value" ng-model="truckfeild.value" required>
+                </label>
+
+                <label class="item item-input" ng-class="{ 'has-errors' : truckForm.type.$invalid && (truckForm.type.$dirty || truckForm.$submitted), 'no-errors' : truckForm.type.$valid}">
+                    <span class="input-label">Type*</span>
+                    <input type="text" name="type" ng-model="truckfeild.type" required>
+                </label>
+                <label class="item item-input" ng-class="{ 'has-errors' : truckForm.unit.$invalid && (truckForm.unit.$dirty || truckForm.$submitted), 'no-errors' : truckForm.unit.$valid}">
+                    <span class="input-label">Unit*</span>
+                    <input type="text" name="unit" ng-model="truckfeild.unit" required>
+                </label>
+                <label class="item item-input" ng-class="{ 'has-errors' : truckForm.capacity.$invalid && (truckForm.capacity.$dirty || truckForm.$submitted), 'no-errors' : truckForm.capacity.$valid}">
+                    <span class="input-label">Capacity*</span>
+                    <input type="text" name="capacity" ng-model="truckfeild.capacity" required>
+                </label>
+                <label class="item item-input" ng-class="{ 'has-errors' : truckForm.tyres.$invalid && (truckForm.tyres.$dirty || truckForm.$submitted), 'no-errors' : truckForm.tyres.$valid}">
+                    <span class="input-label">Tyres*</span>
+                    <input type="text" name="tyres" ng-model="truckfeild.tyres" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Brand</span>
+                    <input type="text" name="brand" ng-model="truckfeild.brand">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Model</span>
+                    <input type="text" name="model" ng-model="truckfeild.model">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Mfg year</span>
+                    <input type="text" name="mfgyear" ng-model="truckfeild.mfgyear">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">engine no</span>
+                    <input type="text" name="engineno" ng-model="truckfeild.engineno">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">engine Detail</span>
+                    <input type="text" name="enginedetail" ng-model="truckfeild.enginedetail">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Chesis</span>
+                    <input type="text" name="chesis" ng-model="truckfeild.chesis">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">gvw</span>
+                    <input type="text" name="gvw" ng-model="truckfeild.gvw">
+                </label>
+
+                <p class="assertive padding" ng-show="truckForm.$submitted && !truckForm.$valid">Please fill required feilds</p>
+                <button class="button button-full button-positive" type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

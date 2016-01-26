@@ -1,0 +1,23 @@
+<ion-view class="slider-view">
+    <ion-nav-title> <span>Trip Lists</span> </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a class="button button-icon button-clear ion-android-add" ng-click="openModal()"> </a>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+        <div class="list nomargin" ng-repeat="trip in trips">
+             <a class="item item-icon-right" href="#/app/page/trip/{{trip.id}}">
+                <h2>From : <span ng-if="trip.attributes.Slocation" ng-bind="trip.attributes.Slocation + ','"></span><span ng-bind="trip.attributes.Scity + ','"></span><span ng-bind="trip.attributes.Sstate"></span><br>To: <span ng-if="trip.attributes.Elocation" ng-bind="trip.attributes.Elocation + ','"></span><span ng-bind="trip.attributes.Ecity + ','"></span><span ng-bind="trip.attributes.Estate"></span></h2><br>
+                <p>Material type: <span ng-bind="trip.attributes.material"></span></p>
+                <p>Truck type: <span ng-bind="trip.attributes.Vtype"></span></p>
+                <p>Truck Capacity: <span ng-bind="trip.attributes.Vcapacity"></span></p>
+                <p>Reporting Time: <span ng-bind="trip.attributes.reportingDate | date:'dd/MM/yyyy, h:mm a'"></span></p>
+                
+                <i class="icon ion-ios-arrow-forward"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

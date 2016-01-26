@@ -1,0 +1,36 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content class="post-size-14px">
+        <ion-nav-bar class="bar app-top-bar">
+            <ion-nav-back-button> </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"> </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
+        <ion-content>
+            <ion-list>
+                <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.profile">
+                    <div class="user-image-container">
+                        <!-- <pre-img ratio="_1_1" helper-class="rounded-image"> <img class="user-image" ng-src="https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg" spinner-on-load> </pre-img>-->
+                    </div>
+                    <h2 class="greeting">Hi {{username}}</h2>
+                    <p class="message">Welcome back</p>
+                </ion-item>
+                <ion-item class="item-icon-left" nav-clear ui-sref="app.trip"ng-if="usertype == 'trucker'"> <i class="icon ion-bookmark"></i>
+                    <h2 class="menu-text">Search Job</h2> </ion-item>
+                <ion-item class="item-icon-left" nav-clear ui-sref="app.truck" ng-if="usertype == 'trucker'"> <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text">Truck</h2> </ion-item>
+                    
+                <ion-item class="item-icon-left" nav-clear href="#" ng-if="usertype == 'agent'"> <i class="icon ion-bookmark"></i>
+                    <h2 class="menu-text">Trips</h2> </ion-item>
+                <ion-item class="item-icon-left" nav-clear ui-sref="app.truck" ng-if="usertype == 'agent'"> <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text">Offline Contact</h2> </ion-item>    
+                    
+                <ion-item class="item-icon-left" nav-clear href="#" ng-click="logout()"> <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text">Logout</h2> </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

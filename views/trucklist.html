@@ -1,0 +1,19 @@
+<ion-view class="slider-view">
+    <ion-nav-title> <span>Truck Lists</span> </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a class="button button-icon button-clear ion-android-add" ng-click="openModal()"> </a>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+        <div class="list nomargin" ng-repeat="truck in trucks">
+             <a class="item item-icon-right" href="#/app/page/truck/{{truck.id}}">
+                <h2>{{truck.regno}}</h2>
+                <p>{{truck.type}}</p>
+                <i class="icon ion-ios-arrow-forward"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

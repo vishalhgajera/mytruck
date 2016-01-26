@@ -1,0 +1,20 @@
+<ion-view class="login-view auth-view" cache-view="false">
+    <ion-content scroll="false">
+        <div class="row">
+            <div class="col col-center">
+                <div class="card login-container">
+                    <form name="loginForm" ng-submit="signIn(loginForm)" novalidate>
+                        <div class="item item-body bottom-content">
+                            <label class="item item-input">
+                                <input type="text" placeholder="User name" name="user" ng-model="user.name" required> </label>
+                            <label class="item item-input" show-hide-container>
+                                <input type="password" placeholder="Password" name="password" ng-model="user.password" ng-minlength="5" required> </label>
+                            <button type="submit" class="button button-positive button-block" ng-click="doLogIn()" ng-disabled="loginForm.email.$invalid || loginForm.password.$invalid"> Log In </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="alternative-actions"> <a class="forgot-password button button-small button-clear button-light" ui-sref="auth.forgot-password">           Forgot Password?         </a> <a class="sign-up button button-small button-clear button-light" ui-sref="auth.signup">           Sign Up         </a> </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

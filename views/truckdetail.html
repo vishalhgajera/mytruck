@@ -1,0 +1,66 @@
+<ion-view class="slider-view">
+    <ion-nav-title> <span>Truck Detail</span> </ion-nav-title>
+    <ion-content>
+       <div class="row margin-bottom whitebg"  ng-show="truck.regno" >
+            <div class="col col-50"><strong>Registration number</strong></div>
+            <div class="col col-50" ng-bind="truck.regno"></div>
+        </div>
+       <div class="row margin-bottom whitebg" ng-show="truck.owner"  >
+            <div class="col col-50"><strong>Name of Owner</strong></div>
+            <div class="col col-50" ng-bind="truck.owner" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.value">
+            <div class="col col-50"><strong>Approx Value to Truck
+</strong></div>
+            <div class="col col-50" ng-bind="truck.value" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.type">
+            <div class="col col-50"><strong>Type of Vehicle
+</strong></div>
+            <div class="col col-50" ng-bind="truck.type" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.capacity">
+            <div class="col col-50"><strong>Capacity
+</strong></div>
+            <div class="col col-50" ng-bind="truck.capacity" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.tyres">
+            <div class="col col-50"><strong>No of Tyres
+</strong></div>
+            <div class="col col-50" ng-bind="truck.tyres" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.brand">
+            <div class="col col-50"><strong>Make
+</strong></div>
+            <div class="col col-50" ng-bind="truck.brand" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.model">
+            <div class="col col-50"><strong>Model
+</strong></div>
+            <div class="col col-50" ng-bind="truck.model" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.mfgyear">
+            <div class="col col-50"><strong>Year Of Mfg
+</strong></div>
+            <div class="col col-50" ng-bind="truck.mfgyear" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.engineno">
+            <div class="col col-50"><strong>Engine No
+Chesis No
+</strong></div>
+            <div class="col col-50" ng-bind="truck.engineno" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.chesis">
+            <div class="col col-50"><strong>Chesis No
+</strong></div>
+            <div class="col col-50" ng-bind="truck.chesis" ></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="truck.gvw">
+            <div class="col col-50"><strong>GvW
+</strong></div>
+            <div class="col col-50" ng-bind="truck.gvw" ></div>
+        </div>
+        
+
+    </ion-content>
+</ion-view>

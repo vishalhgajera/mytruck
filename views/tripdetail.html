@@ -1,0 +1,61 @@
+<ion-view class="slider-view">
+    <ion-nav-title> <span>Trip Detail</span> </ion-nav-title>
+    <ion-content>
+       
+        <div class="row margin-bottom whitebg">
+            <div class="col col-50"><strong>From</strong></div>
+            <div class="col col-50"><span ng-if="trip.attributes.Slocation" ng-bind="trip.attributes.Slocation + ','"></span><span ng-bind="trip.attributes.Scity + ','"></span><span ng-bind="trip.attributes.Sstate"></span></div>
+        </div>
+        <div class="row margin-bottom whitebg">
+            <div class="col col-50"><strong>To</strong></div>
+            <div class="col col-50">
+                <span ng-if="trip.attributes.Elocation" ng-bind="trip.attributes.Elocation + ','"></span><span ng-bind="trip.attributes.Ecity + ','"></span><span ng-bind="trip.attributes.Estate"></span></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.Vtype">
+            <div class="col col-50"><strong>Type</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.Vtype"></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.Vcapacity">
+            <div class="col col-50"><strong>Capacity
+</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.Vcapacity"></div>
+        </div>
+        
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.material">
+            <div class="col col-50"><strong>Material
+</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.material"></div>
+        </div>
+       
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.reportingDate">
+            <div class="col col-50"><strong>Reporting Date
+</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.luCharge"></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.luCharge">
+            <div class="col col-50"><strong>Loading/unloading charge
+</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.luCharge"></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.insurance">
+            <div class="col col-50"><strong>Insurance </strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.insurance"></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.Stax">
+            <div class="col col-50"><strong>Service Tax</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.Stax"></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.payCondition">
+            <div class="col col-50"><strong>Payment Condition</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.payCondition"></div>
+        </div>
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.Acommission">
+            <div class="col col-50"><strong>Agent Commission</strong></div>
+            <div class="col col-50" ng-bind="trip.attributes.Acommission"></div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer item-input-inset">
+      <label class="item-input-wrapper"><input type="text" placeholder="Bid Your Price" ng-model="bidAmount"></label>
+    <button class="button button-positive button-small" ng-click="bidsubmit()">Bid</button>
+</div>
+</ion-view>
