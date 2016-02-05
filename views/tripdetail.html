@@ -1,6 +1,6 @@
 <ion-view class="slider-view">
     <ion-nav-title> <span>Trip Detail</span> </ion-nav-title>
-    <ion-content>
+    <ion-content class="has-footer">
        
         <div class="row margin-bottom whitebg">
             <div class="col col-50"><strong>From</strong></div>
@@ -27,10 +27,10 @@
             <div class="col col-50" ng-bind="trip.attributes.material"></div>
         </div>
        
-        <div class="row margin-bottom whitebg" ng-show="trip.attributes.reportingDate">
+        <div class="row margin-bottom whitebg" ng-show="trip.attributes.reportingDate" >
             <div class="col col-50"><strong>Reporting Date
 </strong></div>
-            <div class="col col-50" ng-bind="trip.attributes.luCharge"></div>
+            <div class="col col-50" ng-bind="trip.attributes.reportingDate"></div>
         </div>
         <div class="row margin-bottom whitebg" ng-show="trip.attributes.luCharge">
             <div class="col col-50"><strong>Loading/unloading charge
@@ -54,8 +54,9 @@
             <div class="col col-50" ng-bind="trip.attributes.Acommission"></div>
         </div>
     </ion-content>
-    <div class="bar bar-footer item-input-inset">
-      <label class="item-input-wrapper"><input type="text" placeholder="Bid Your Price" ng-model="bidAmount"></label>
-    <button class="button button-positive button-small" ng-click="bidsubmit()">Bid</button>
-</div>
+    <div class="bar bar-footer item-input-inset bar-positive">
+    <h4 class="bidprice" ng-show="bidprice">Your bid amount is : <span  ng-bind="bidprice"></span> </h4> 
+      <label ng-show="biddata && !bidprice" class="item-input-wrapper"><input type="text" placeholder="Bid Your Price" ng-model="bidAmount"></label>
+    <button ng-show="biddata && !bidprice" class="button button-positive button-small" ng-click="bidsubmit()">Bid</button>
+    </div>
 </ion-view>

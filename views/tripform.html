@@ -1,0 +1,183 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Add Trip</h1>
+        <buttons side="right">
+            <a class="button button-icon button-clear ion-android-close" ng-click="closeModal()"> </a>
+        </buttons>
+
+    </ion-header-bar>
+    <ion-content class="tripform">
+        <form name="tripForm" ng-submit="addTrip(tripForm)" novalidate>
+
+            <div class="list">
+				<!-- Starting Trip -->
+               <div class="item"><h3>Starting Location</h3></div>
+                
+                	<label class="item item-input item-select">
+                        <span class="input-label">
+                          State:
+                        </span>
+                        
+                        <select ng-model="tripField.sstate" name="sstate" ng-class="{'has-errors' : truckForm.regno.$invalid && (truckForm.regno.$dirty || truckForm.$submitted), 'no-errors' : truckForm.regno.$valid}">
+                        <option ng-selected="true" value="">Select States</option>
+                        <option ng-repeat="option in states track by $index" value="{{$index}}">{{option}}</option>
+                        </select>
+                     </label>
+                     
+                    <label class="item item-input item-select">
+                        <span class="input-label">
+                          City:
+                        </span>
+                        <select ng-disabled="!sstate" ng-model="scity">
+                          <option ng-selected="true" value="">Select City</option>
+                        <option ng-repeat="option in cities[sstate]" value="option">{{option}}</option>
+                        </select>
+                     </label>
+                     
+                    <label class="item item-input">
+                        <span class="input-label">
+                          location:
+                        </span>
+                       <input type="text" name="type" required >
+                     </label>
+                
+                <!-- End Trip -->
+                 <div class="item"><h3>End Location</h3></div>
+                	<label class="item item-input item-select">
+                        <span class="input-label">
+                          State:
+                        </span>
+                        <select ng-model="estate" >
+                         <option ng-selected="true" value="">Select States</option>
+                        <option ng-repeat="option in states track by $index" value="{{$index}}">{{option}}</option>
+                        </select>
+                     </label>
+                     
+                    <label class="item item-input item-select">
+                        <span class="input-label">
+                          City:
+                        </span>
+                        <select ng-disabled="!estate" ng-model="ecity">
+                           <option ng-selected="true" value="">Select City</option>
+                        <option ng-repeat="option in cities[estate]" value="option">{{option}}</option>
+                        </select>
+                     </label>
+                     
+                    <label class="item item-input ">
+                            <span class="input-label">
+                              Location:
+                            </span>
+                            <input type="text" name="type" required>
+                         </label>
+                         
+                <!-- Type of Vehicle -->
+                <label class="item item-input item-select">
+                        <span class="input-label">
+                        Vehicle Type:
+                        </span>
+                        <select>
+                          <option>Truck</option>
+                          <option selected="">Tanker</option>
+                          <option>Trailer</option>
+                          <option>Geonosis </option>
+                          <option>Refrigerated Vehicle</option>
+                          <option>Other Vehicle</option>
+                        </select>
+                </label>
+                
+                <!-- Capacity -->
+                <label class="item item-input">
+                    <span class="input-label">Capacity:</span>
+                    <input type="text" required name="type"  style="">
+                </label>
+                
+                <!-- Number of Vehicle Required -->
+                <label class="item item-input">
+                       <span class="input-label">Number of Vehicle: </span>
+                 <input type="text" required name="type"  style="">
+                </label>
+                
+                <!-- Material Details-->
+                <label class="item item-input">
+                    <span class="input-label">Material Details: </span>
+                    <input type="text" required name="type"  style="">
+                </label>
+                
+                <!-- Reporting Date -->
+                <label class="item item-input">
+                    <span class="input-label">Reporting Date: </span>
+                    <input type="text" required name="type"  style="">
+                </label>
+                
+                <!-- Reporting Time -->
+                <label class="item item-input">
+                    <span class="input-label">Reporting Time: </span>
+                    <input type="text" required name="type"  style="">
+                </label>
+                
+                
+                <!-- Loading and unloading Charges Paid by  -->
+                
+                <label class="item item-input item-select">
+                 		<span class="input-label">
+                          L/U Charges :
+                        </span>
+                        <select>
+                          <option value="">Paid by</option>
+                          <option value="transporter">Transporter</option>
+                          <option value="party">Party</option>
+                        </select>
+                </label>
+                
+                
+                
+                <!-- Material  Insurance  -->
+                <label class="item item-input item-select">
+                 		<span class="input-label">
+                        Insurance:  
+                        </span>
+                        <select>
+                          <option class="">Paid by</option>
+                          <option class="true">Transporter</option>
+                          <option  class="false">Party</option>
+                        </select>
+                </label>
+                
+                <!-- Service Tax Paid by  -->
+                <label class="item item-input item-select">
+                 		<span class="input-label">
+                          Service Tax:
+                        </span>
+                        <select>
+                          <option class="">Paid by</option>
+                           <option value="transporter">Transporter</option>
+                          <option value="party">Party</option>
+                        </select>
+                </label>
+                
+                <!-- Payment Condition-->
+                <label class="item item-input ">
+                 		<span class="input-label">
+                          Payment Condition:
+                        </span>
+                        <input type="text" required name="type"  style="">
+                        
+                </label>
+                
+                <!-- Agent Commission-->
+                <label class="item item-input ">
+                 		<span class="input-label">
+                          Agent Commission:
+                        </span>
+                        <input type="text" required name="type"  style="">
+                        
+                </label>
+                
+                <p class="assertive padding" ng-show="tripForm.$submitted && !tripForm.$valid">Please fill required feilds</p>
+                <button class="button button-full button-positive" type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

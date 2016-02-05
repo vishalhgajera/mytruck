@@ -18,17 +18,16 @@
                     <h2 class="greeting">Hi {{username}}</h2>
                     <p class="message">Welcome back</p>
                 </ion-item>
-                <ion-item class="item-icon-left" nav-clear ui-sref="app.trip"ng-if="usertype == 'trucker'"> <i class="icon ion-bookmark"></i>
-                    <h2 class="menu-text">Search Job</h2> </ion-item>
-                <ion-item class="item-icon-left" nav-clear ui-sref="app.truck" ng-if="usertype == 'trucker'"> <i class="icon ion-radio-waves"></i>
+                <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.trip" ng-if="usertype == 'trucker'"> <i class="icon ion-bookmark"></i>
+                    <h2 class="menu-text">Search Trip</h2> </ion-item>
+                <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.truck" ng-if="usertype == 'trucker'"> <i class="icon ion-radio-waves"></i>
                     <h2 class="menu-text">Truck</h2> </ion-item>
                     
-                <ion-item class="item-icon-left" nav-clear href="#" ng-if="usertype == 'agent'"> <i class="icon ion-bookmark"></i>
+                <ion-item class="item-icon-left" nav-clear menu-close href="#" ng-if="usertype == 'agent'"> <i class="icon ion-bookmark"></i>
                     <h2 class="menu-text">Trips</h2> </ion-item>
                 <ion-item class="item-icon-left" nav-clear ui-sref="app.truck" ng-if="usertype == 'agent'"> <i class="icon ion-radio-waves"></i>
-                    <h2 class="menu-text">Offline Contact</h2> </ion-item>    
-                    
-                <ion-item class="item-icon-left" nav-clear href="#" ng-click="logout()"> <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text">Offline Contact</h2> </ion-item>
+                <ion-item class="item-icon-left" nav-clear menu-close href="#" ng-click="logout()"> <i class="icon ion-radio-waves"></i>
                     <h2 class="menu-text">Logout</h2> </ion-item>
             </ion-list>
         </ion-content>
