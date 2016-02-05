@@ -2380,3 +2380,6 @@ ion-side-menu .heading-item .item-content { padding-left: 20px;}
 
 .tripform .item-select > select { width: 100%;}
 .tripform select[disabled] { opacity: 0.2;}
+
+.tripform  .item-input{ margin: 0px; border-top: none;}
+.tripform  .item-input.has-errors{ border-bottom-color: #FF4C4C;}

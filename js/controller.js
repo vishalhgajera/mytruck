@@ -165,7 +165,7 @@ angular.module('hitracker.controllers', [])
 
     var trip = Parse.Object.extend("Trip");
     var tripQuery = new Parse.Query(trip);
-    var tripField = {}
+    $scope.tripField = {}
     
     tp = trip;
     $scope.doRefresh = function () {
@@ -262,7 +262,7 @@ angular.module('hitracker.controllers', [])
             userid: $rootScope.user,
             price: $scope.bidAmount
         });
-
+        
         newbid.save(null, {
             success: function (truck) {
                 $ionicPopup.alert({
